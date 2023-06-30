@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+  <div class="col">
+    <%= @employee.image.present? ? image_tag(@employee.image, width: "50%", height: "50%", class: "img-thumbnail float-end") : "" %>
+  </div>
+  <div class="col">
+    <h5><%= @employee.name %></h5>
+    <p><%= @employee.position %></p>
+  </div>
+<div class=" col pt-3">
+  <%= link_to "Edit this employee", edit_employee_path(@employee), class: "button-34" %>
+  <%= link_to "Back to employees", employees_path, class: "button-34" %>
+  <div class="pt-3">
+    <%= button_to "Destroy this employee", @employee, method: :delete, class: "button-34" %>
+  </div>
+</div>
