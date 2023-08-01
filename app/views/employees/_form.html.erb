@@ -1,18 +1,4 @@
 <%= form_with(model: employee) do |form| %>
-  <% if employee.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
-
-      <ul>
-        <% employee.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="col"></div>
-
   <div>
     <%= form.label :name, style: "display: block", class: "form-label" %>
     <%= form.text_field :name, class: "form-control mb-3" %>
@@ -34,6 +20,6 @@
   </div>
 
   <div>
-    <%= form.submit class: "button-34" %>
+    <%= form.submit "Save", class: "btn btn-primary" %>
   </div>
 <% end %>

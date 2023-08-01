@@ -1,0 +1,16 @@
+<div id="products">
+  <% if @products.empty? %>
+    <%= image_tag "empty-boxx", class: "mx-auto d-block my-5" %>
+    <h3 class="text-center my-5 text-white">No products found</h3>
+  <% else %>
+    <% @products.each do |product| %>
+      <%= render product %>
+      <%= link_to "Show this product", product, class: "btn btn-primary" %> 
+    <% end %>
+  <% end %>
+</div>
+<% if current_user.present? %>
+  <% if current_user.admin? %>
+    <%= link_to "New product", new_product_path, data: { turbo_frame: "modal" }, class: "btn btn-primary" %>
+  <% end %>
+<% end %>

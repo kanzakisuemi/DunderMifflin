@@ -1,16 +1,31 @@
-<p style="color: green"><%= notice %></p>
-
-  <div class="col">
-    <%= @employee.image.present? ? image_tag(@employee.image, width: "50%", height: "50%", class: "img-thumbnail float-end") : "" %>
+<%= turbo_frame_tag "modal" do %>
+  <div class="dean-modal d-flex" style="flex-direction: column; justify-content: space-between;">
+    <div class="modal-header">
+      <%= link_to employees_path, data: { controller: "modals", action: "modals#close" } do %>
+        <%= image_tag "close_icon", class: "icon-s mb-3" %>
+      <% end %>
+      <hr class="divider" />
+    </div>
+    <div class="modal-body">
+      <p style="color: green"><%= notice %></p>
+      <div class="row">
+        <div class="col">
+          <%= @employee.image.present? ? image_tag(@employee.image, class: "user float-end") : image_tag("empty_user.png", class: "user float-end") %>
+        </div>
+        <div class="col">
+          <h5><%= @employee.name %></h5>
+          <p><%= @employee.position %></p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <hr class="divider" />
+        <div class="d-flex justify-content-center">
+          <%= link_to "Edit", edit_employee_path(@employee), class: "btn btn-primary d-inline mx-2", data: {turbo_frame: "modal"} %>
+          <%= button_to "Delete", @employee, method: :delete, class: "btn btn-primary d-inline mx-2" %>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="col">
-    <h5><%= @employee.name %></h5>
-    <p><%= @employee.position %></p>
-  </div>
-<div class=" col pt-3">
-  <%= link_to "Edit this employee", edit_employee_path(@employee), class: "button-34" %>
-  <%= link_to "Back to employees", employees_path, class: "button-34" %>
-  <div class="pt-3">
-    <%= button_to "Destroy this employee", @employee, method: :delete, class: "button-34" %>
-  </div>
-</div>
+<% end %>

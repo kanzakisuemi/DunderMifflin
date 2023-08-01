@@ -1,38 +1,50 @@
-// Entry point for your Sass build
-.first-color {
-  background-color: #635985;
-}
-.second-color {
-  background-color: #443C68;
-}
-.third-color {
-  background-color: #393053;
-}
-.fourth-color {
-  background-color: #18122B;
+@import 'custom.scss';
+@import 'buttons.scss';
+@import 'colors.scss';
+@import 'modal.scss';
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+.fonte {
+  font-weight: 20;
+  letter-spacing: 1px;
 }
 
+.dean-modal-footer {  
+  position: relative;
+}
 
-// <button class="button-34" role="button">Button 34</button>
-/* CSS */
-.button-34 {
-  background: #5E5DF0;
-  border-radius: 999px;
-  box-shadow: #5E5DF0 0 10px 20px -10px;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  cursor: pointer;
-  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 24px;
-  opacity: 1;
-  outline: 0 solid transparent;
-  padding: 8px 18px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  width: fit-content;
-  word-break: break-word;
-  border: 0;
+a {
+  text-decoration: none;
+}
+
+.user {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+/*  border-radius: 50%;*/
+
+  object-fit: cover;
+}
+
+.card-img-top {
+  object-fit: cover;
+}
+
+.icon-s {
+  height: 25px;
+}
+
+body {
+  background-color: $sabre-blue;
+}
+
+.white-border, .white-border:hover {
+  border-color: white;
+}
+
+.card.pricing {
+  width: 24rem;
+  border-color: rgb(116, 185, 153);
+  border-width: 3px;
+  border-radius: 2px;
 }

@@ -1,0 +1,5 @@
+<%= image_tag "sabre", class: "d-block mx-auto" %>
+
+<% if current_user %>
+  <span style="color: white;">Hello <%= current_user.email %>, you are an <%= current_user.role %></span>
+<% end %>

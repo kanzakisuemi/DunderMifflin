@@ -1,0 +1,35 @@
+<%= turbo_frame_tag "modal" do %>
+  <div class="dean-modal">
+    <div>
+      <%= link_to homepage_path, data: { controller: "modals", action: "modals#close" } do %>
+        <%= image_tag "close_icon", class: "icon-s mb-3" %>
+      <% end %>
+    </div>
+    <h2 class="fonte mb-3">Sign up</h2>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="form-floating mb-3">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+        <%= f.label :email, class: "form-label" %>
+      </div>
+
+      <% if @minimum_password_length %>
+        <span style="color: lightgrey;">(<%= @minimum_password_length %> characters minimum)</span>
+      <% end %>
+      <div class="form-floating mb-3">
+        <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+        <%= f.label :password, class: "form-label" %>
+      </div>
+
+      <div class="form-floating mb-3">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+        <%= f.label :password_confirmation, class: "form-label" %>
+      </div>
+      <%= f.submit "Sign up", data: { turbo: false }, class: "btn btn-primary mb-3" %>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+  </div>
+<% end %>

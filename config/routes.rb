@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
-  root to: 'employees#index'
-  resources :employees
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root to: 'application#homepage'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  devise_for :users
+
+  resources :products
+  resources :employees
+
+  get '/homepage', to: 'application#homepage', as: "homepage"
+  get '/catalog',  to: 'products#index',       as: "catalog"
+  get '/pricing',  to: 'application#pricing',  as: "pricing"
+  get '/about',    to: 'application#about',    as: "about"
+
 end

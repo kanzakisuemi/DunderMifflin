@@ -1,0 +1,33 @@
+<%= turbo_frame_tag "modal" do %>
+  <div class="dean-modal">
+    <div>
+      <%= link_to homepage_path, data: { controller: "modals", action: "modals#close" } do %>
+        <%= image_tag "close_icon", class: "icon-s mb-3" %>
+      <% end %>
+    </div>
+    <h2 class="fonte mb-3">Login</h2>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-floating mb-3">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+        <%= f.label :email, class: "form-label" %>
+      </div>
+
+      <div class="form-floating mb-3">
+        <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+        <%= f.label :password, class: "form-label" %>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="mb-3">
+          <%= f.check_box :remember_me, class: "" %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end %>
+
+      <%= f.submit "Login", class: "btn btn-primary mb-3" %>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+  </div>
+<% end %>

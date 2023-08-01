@@ -1,9 +1,12 @@
-<h1>New employee</h1>
+<%= turbo_frame_tag "modal" do %>
+  <div class="dean-modal">
+    <div>
+      <%= link_to "#", data: { controller: "modals", action: "modals#close" } do %>
+        <%= image_tag "close_icon", class: "icon-s mb-3" %>
+      <% end %>
+    </div>
 
-<%= render "form", employee: @employee %>
+    <%= render "form", employee: @employee %>
 
-<br>
-
-<div>
-  <%= link_to "Back to employees", employees_path, class: "button-34" %>
-</div>
+  </div>
+<% end %>

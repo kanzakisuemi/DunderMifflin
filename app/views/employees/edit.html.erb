@@ -1,10 +1,9 @@
-<h1>Editing employee</h1>
+<%= turbo_frame_tag "modal" do %>
+  <div class="dean-modal">
+    <%= link_to employees_path do %>
+      <%= image_tag "x-circle", class: "icon-s mb-3" %>
+    <% end %>
 
-<%= render "form", employee: @employee %>
-
-<br>
-
-<div>
-  <%= link_to "Show this employee", @employee, class: "button-34" %>
-  <%= link_to "Back to employees", employees_path, class: "button-34" %>
-</div>
+    <%= render "form", employee: @employee %>
+  </div>
+<% end %>

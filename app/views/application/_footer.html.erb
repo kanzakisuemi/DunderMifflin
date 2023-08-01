@@ -1,0 +1,29 @@
+<div class="container">
+  <footer class="d-flex flex-wrap justify-content-center py-3 mb-4 border-top">
+    <div class="col-md-4 d-flex align-items-center">
+      <%= link_to homepage_path, class: "mb-3 me-2 mb-md-0 text-decoration-none" do %>
+        <%= image_tag "nav-sabre", style: "height: 45px;" %>
+      <% end %>
+      <span class="mb-3 mb-md-0 text-white">
+        © 2023 Company, Inc
+      </span>
+    </div>
+    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+      <li class="ms-3">
+        <%= link_to "https://www.instagram.com/theofficialdundermifflin/" do %>
+          <%= image_tag "insta", style: "height: 30px;" %>
+        <% end %>
+      </li>
+      <li class="ms-3">
+        <%= link_to "https://www.facebook.com/DunderMifflinBrasil" do %>
+          <%= image_tag "facebook", style: "height: 30px;" %>
+        <% end %>
+      </li>
+      <li class="ms-3">
+        <%= link_to "https://twitter.com/DunderMifflinAS" do %>
+          <%= image_tag "twitter", style: "height: 30px;" %>
+        <% end %>
+      </li>
+    </ul>
+  </footer>
+</div>

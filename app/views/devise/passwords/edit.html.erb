@@ -1,0 +1,32 @@
+<%= turbo_frame_tag "modal" do %>
+  <div class="dean-modal">
+    <div>
+      <%= link_to homepage_path, data: { controller: "modals", action: "modals#close" } do %>
+        <%= image_tag "close_icon", class: "icon-s mb-3" %>
+      <% end %>
+    </div>
+    <h2>Change your password</h2>
+
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <%= f.hidden_field :reset_password_token %>
+
+      <% if @minimum_password_length %>
+        <span style="color: lightgrey;">(<%= @minimum_password_length %> characters minimum)</span>
+      <% end %>
+      <div class="form-floating mb-3">
+        <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class: "form-control" %>
+        <%= f.label :password, "New password", class: "form-label" %>
+      </div>
+
+      <div class="form-floating mb-3">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+        <%= f.label :password_confirmation, "Confirm new password", class: "form-label" %>
+      </div>
+
+      <%= f.submit "Save", class: "btn btn-primary" %>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+  </div>
+<% end %>
