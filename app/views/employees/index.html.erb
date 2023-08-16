@@ -1,8 +1,30 @@
 <p style="color: green"><%= notice %></p>
 
-<%= link_to "New employee", new_employee_path, class: "btn btn-primary mt-3 mx-2 white-border", data: { turbo_frame: "modal" } %>
+<div class="d-flex justify-content-between">
+  <%= link_to "New employee", new_employee_path, class: "btn btn-primary white-border mx-2", data: { turbo_frame: "modal" } %>
+  <%= form_tag "/employees", method: "GET", class: "d-flex" do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search employee", class: "form-control mx-2" %>
+    <%= submit_tag "Search", class: "btn btn-primary white-border" %>
+  <% end %>
+</div>
 <main class="container">
   <div id="employees" class="row gap-3 pt-5 mb-3">
+    <% if @result %>
+      <% @result.each do |empl| %>
+        <div class="col-3">
+          <%= link_to(empl, data: {turbo_frame: "modal"}) do %>
+            <div class="card" style="width: 18rem; height: 20rem;">
+              <%= empl.image.present? ? image_tag(empl.image, class: "card-img-top", style: "height: 11rem;") : image_tag("empty_user.png", class: "card-img-top", style: "height: 11rem;") %>
+              <div class="card-body">
+                <h5 class="card-title"><%= empl.name %></h5>
+                <p class="card-text"><%= empl.position %></p>
+                <%= image_tag "kaonashi-icon", size: "30" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
     <% @employees.each do |employee| %>
       <div class="col-3">
         <%= link_to(employee, data: {turbo_frame: "modal"}) do %>

@@ -4,6 +4,17 @@ class EmployeesController < ApplicationController
   # GET /employees or /employees.json
   def index
     @employees = Employee.all
+
+    return if params[:search].blank?
+
+    @query = params[:search].capitalize
+    @result = @employees.where("name LIKE ?", "%" + @query + "%").or(@employees.where("position LIKE ?", "%" + @query + "%"))
+    # @result = @employees.find_by_sql("SELECT * FROM employees WHERE name LIKE '%" + @query + "%' OR position LIKE '%" + @query + "%'")
+    ids = []
+    @result.each do |employee|
+      ids << employee.id
+    end
+    @employees = @employees.where.not(id: ids)
   end
 
   # GET /employees/1 or /employees/1.json
