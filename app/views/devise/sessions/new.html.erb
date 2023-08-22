@@ -1,11 +1,12 @@
 <%= turbo_frame_tag "modal" do %>
   <div class="dean-modal">
-    <div>
-      <%= link_to homepage_path, data: { controller: "modals", action: "modals#close" } do %>
-        <%= image_tag "close_icon", class: "icon-s mb-3" %>
-      <% end %>
+    <div class="mb-3 ">
+      <%= link_to "", homepage_path, class: "btn btn-close btn-sm" %>
     </div>
-    <h2 class="fonte mb-3">Login</h2>
+
+    <div class="d-flex mb-3">
+      <%= image_tag "user_circle_icon", size: "80", class: "mx-auto" %>
+    </div>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-floating mb-3">
@@ -18,14 +19,17 @@
         <%= f.label :password, class: "form-label" %>
       </div>
 
+      <div class="d-grid gap-2">
+        <%= f.submit "LOGIN", class: "btn btn-primary mb-3 text-white" %>
+      </div>
+
       <% if devise_mapping.rememberable? %>
-        <div class="mb-3">
-          <%= f.check_box :remember_me, class: "" %>
-          <%= f.label :remember_me %>
+        <div class="form-check mb-3">
+          <%= f.check_box :remember_me, class: "form-check-input" %>
+          <%= f.label :remember_me, class: "form-check-label" %>
         </div>
       <% end %>
 
-      <%= f.submit "Login", class: "btn btn-primary mb-3" %>
     <% end %>
 
     <%= render "devise/shared/links" %>

@@ -1,9 +1,7 @@
 <%= turbo_frame_tag "modal" do %>
   <div class="dean-modal">
-    <div>
-      <%= link_to homepage_path, data: { controller: "modals", action: "modals#close" } do %>
-        <%= image_tag "close_icon", class: "icon-s mb-3" %>
-      <% end %>
+    <div class="mb-3 ">
+      <%= link_to "", homepage_path, class: "btn btn-close btn-sm" %>
     </div>
     <h2>Change your password</h2>
 

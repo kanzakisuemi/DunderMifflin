@@ -1,6 +1,6 @@
+@import 'colors.scss';
 @import 'custom.scss';
 @import 'buttons.scss';
-@import 'colors.scss';
 @import 'modal.scss';
 @import '../node_modules/bootstrap/scss/bootstrap';
 
@@ -34,10 +34,6 @@ a {
   height: 25px;
 }
 
-body {
-  background-color: $sabre-blue;
-}
-
 .white-border, .white-border:hover {
   border-color: white;
 }
@@ -47,4 +43,9 @@ body {
   border-color: rgb(116, 185, 153);
   border-width: 3px;
   border-radius: 2px;
+}
+
+.alert.alert-warning.alert-dismissible.fade.show {
+  border-radius: 0px;
+  margin-bottom: 0px;
 }

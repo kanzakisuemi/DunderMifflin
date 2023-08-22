@@ -1,12 +1,25 @@
 /* color variables */
   $sabre-blue: #2f294d;
+  $lolipop-blue: #8582e2;
+  $light-lolipop-blue: #d6dffd;
 /* end */
 /* color classes */
   .text-white {
     color: white;
   }
+
+  .light-lolipop-blue {
+    background-color: $light-lolipop-blue;
+  }
+
+  .lolipop-blue {
+    background-color: $lolipop-blue;
+    color: white;
+  }
+
   .sabre-blue {
     background-color: $sabre-blue;
     color: white;
   }
+
 /* end */

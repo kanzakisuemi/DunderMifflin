@@ -1,9 +1,9 @@
 <%= turbo_frame_tag "modal" do %>
   <div class="dean-modal">
-    <%= link_to employees_path do %>
-      <%= image_tag "x-circle", class: "icon-s mb-3" %>
-    <% end %>
-
-    <%= render "form", employee: @employee %>
+    <div class="modal-body">
+      <%= link_to "", employees_path, class: "btn btn-close btn-sm" %>
+      <hr class="divider" />
+      <%= render "form", employee: @employee %>
+    </div>
   </div>
 <% end %>

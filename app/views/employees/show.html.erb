@@ -1,11 +1,7 @@
 <%= turbo_frame_tag "modal" do %>
-  <div class="dean-modal d-flex" style="flex-direction: column; justify-content: space-between;">
-    <div class="modal-header">
-      <%= link_to employees_path, data: { controller: "modals", action: "modals#close" } do %>
-        <%= image_tag "close_icon", class: "icon-s mb-3" %>
-      <% end %>
-      <hr class="divider" />
-    </div>
+  <div class="dean-modal">
+    <%= link_to "", employees_path, class: "btn btn-close btn-sm" %>
+    <hr class="divider" />
     <div class="modal-body">
       <p style="color: green"><%= notice %></p>
       <div class="row">
@@ -22,8 +18,8 @@
       <div class="col">
         <hr class="divider" />
         <div class="d-flex justify-content-center">
-          <%= link_to "Edit", edit_employee_path(@employee), class: "btn btn-primary d-inline mx-2", data: {turbo_frame: "modal"} %>
-          <%= button_to "Delete", @employee, method: :delete, class: "btn btn-primary d-inline mx-2" %>
+          <%= link_to "Edit", edit_employee_path(@employee), class: "btn btn-secondary d-inline mx-2", data: {turbo_frame: "modal"} %>
+          <%= button_to "Delete", @employee, method: :delete, class: "btn btn-secondary d-inline mx-2" %>
         </div>
       </div>
     </div>

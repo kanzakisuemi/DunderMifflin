@@ -11,11 +11,13 @@
   </head>
 
   <body>
+    <div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
+      <span> special offer 50$ addicional discount on delivery!</span>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
     <%= turbo_frame_tag "modal" %>
     <%= render "application/navbar" %>
-    <div class="container pt-3">
       <%= yield %>
-    </div>
     <%= render "application/footer" %>
   </body>
 </html>

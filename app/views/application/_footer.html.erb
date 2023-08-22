@@ -2,13 +2,19 @@
   <footer class="d-flex flex-wrap justify-content-center py-3 mb-4 border-top">
     <div class="col-md-4 d-flex align-items-center">
       <%= link_to homepage_path, class: "mb-3 me-2 mb-md-0 text-decoration-none" do %>
-        <%= image_tag "nav-sabre", style: "height: 45px;" %>
+        <%= image_tag "pink-dunder", style: "height: 100px;" %>
       <% end %>
-      <span class="mb-3 mb-md-0 text-white">
+      <span class="mb-md-0" style="color: #efa7be;">
         © 2023 Company, Inc
       </span>
     </div>
-    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex my-auto">
+      <li class="ms-3">
+        <%= image_tag "visa_icon", style: "height: 30px;" %>
+      </li>
+      <li class="ms-3">
+        <%= image_tag "mastercard_icon", style: "height: 30px;" %>
+      </li>
       <li class="ms-3">
         <%= link_to "https://www.instagram.com/theofficialdundermifflin/" do %>
           <%= image_tag "insta", style: "height: 30px;" %>
