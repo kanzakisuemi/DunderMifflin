@@ -1,28 +1,21 @@
 /*Required*/
 @import "../node_modules/bootstrap/scss/functions";
 
-/*COLORS*/
-$rosa: #f7c9ed;
-$darkerRosa: #ffb1ee;
-$azul: #c9d6f7;
-$purple: #5c5a97;
-$light-purple: #d1c8fc;
-
 /*Variable overrides*/
 $primary: $lolipop-blue;
-$btn-border-color: white;
-$secondary: $azul;
-$dropdown-link-hover-bg: $rosa;
-$list-group-hover-bg: $rosa;
-$list-group-action-active-bg: $darkerRosa;
-$dropdown-link-active-bg: $darkerRosa;
+$secondary: $light-blue;
+/*$btn-border-color: white;*/
+$dropdown-link-hover-bg: $light-pink;
+$dropdown-link-active-bg: $pink;
 $dropdown-link-active-color: black;
+$list-group-hover-bg: $light-pink;
+$list-group-action-active-bg: $pink;
 $list-group-action-hover-color: black;
-
 
 $navbar-light-color: white;
 $navbar-light-hover-color: $light-purple;
 $navbar-light-active-color: $light-purple;
+
 
 /*Required*/
 @import "../node_modules/bootstrap/scss/variables";

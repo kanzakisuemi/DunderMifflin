@@ -1,15 +1,21 @@
 <p style="color: green"><%= notice %></p>
+
 <div class="d-flex">
   <div class="mx-auto d-flex justify-content-between" style="width: 700px;">
-    <%= link_to "New employee", new_employee_path, class: "btn btn-secondary white-border mx-2", data: { turbo_frame: "modal" } %>
+
+    <%= link_to "New employee", new_employee_path, class: "btn btn-secondary mx-2", data: { turbo_frame: "modal" } %>
+
     <%= form_tag "/employees", method: "GET", class: "d-flex" do %>
       <%= text_field_tag :search, params[:search], placeholder: "Search employee", class: "form-control mx-2" %>
-      <%= submit_tag "Search", class: "btn btn-secondary white-border" %>
+      <%= submit_tag "Search", class: "btn btn-secondary" %>
     <% end %>
+
   </div>
 </div>
+
 <main class="container">
   <div id="employees" class="row justify-content-center gap-3 pt-5 mb-3">
+
     <% if @result %>
       <% @result.each do |empl| %>
         <div class="col-3">
@@ -26,6 +32,7 @@
         </div>
       <% end %>
     <% end %>
+
     <% @employees.each do |employee| %>
       <div class="col-3">
         <%= link_to(employee, data: {turbo_frame: "modal"}) do %>
@@ -39,6 +46,7 @@
         <% end %>
       </div>
     <% end %>
+
   </div>
 </main>
 

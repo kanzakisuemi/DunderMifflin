@@ -1,8 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin Sans');
 @import 'colors.scss';
 @import 'custom.scss';
 @import 'buttons.scss';
 @import 'modal.scss';
 @import '../node_modules/bootstrap/scss/bootstrap';
+
+body {
+  font-family: 'Josefin Sans';
+}
+
+a {
+  text-decoration: none;
+}
 
 .fonte {
   font-weight: 20;
@@ -13,29 +22,16 @@
   position: relative;
 }
 
-a {
-  text-decoration: none;
-}
-
 .user {
   display: inline-block;
   width: 150px;
   height: 150px;
 /*  border-radius: 50%;*/
-
   object-fit: cover;
 }
 
 .card-img-top {
   object-fit: cover;
-}
-
-.icon-s {
-  height: 25px;
-}
-
-.white-border, .white-border:hover {
-  border-color: white;
 }
 
 .card.pricing {
