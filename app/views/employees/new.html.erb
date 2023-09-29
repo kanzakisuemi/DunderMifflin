@@ -1,8 +1,10 @@
 <%= turbo_frame_tag "modal" do %>
   <div class="dean-modal">
-    <div>
+    <div class="d-flex justify-content-end mb-3">
       <%= link_to "", employees_path, class: "btn btn-close btn-sm" %>
-      <hr class="divider" />
+    </div>
+    <div class="d-flex">
+      <%= image_tag "employee", size: "80", class: "mx-auto mb-3" %>
     </div>
 
     <%= render "form", employee: @employee %>

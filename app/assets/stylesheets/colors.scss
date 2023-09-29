@@ -39,4 +39,13 @@
     background-color: $light-pink;
   }
 
+  .half-half-bg {
+  background: linear-gradient(
+    to bottom,
+    $lolipop-blue 0%,
+    $lolipop-blue 15%,
+    $lighter-blue 15%,
+    $lighter-blue 0%,
+  );
+}
 /* end */

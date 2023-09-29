@@ -6,7 +6,7 @@ export default class extends Controller {
   connect() {
     Inputmask('currency', {
       "autoUnmask": true,
-      radixPoint:",",
+      radixPoint: ",",
       groupSeparator: ".",
       allowMinus: false,
       prefix: '$ ',            
